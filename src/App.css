@@ -374,7 +374,7 @@ section:first-child {
   align-items: center;
   justify-content: center;
   z-index: 11;
-  background-image: url(pattern-a.png);
+  background-image: url(../public/pattern-a.png);
   overflow: hidden;
 }
 

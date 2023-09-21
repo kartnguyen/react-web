@@ -19,7 +19,7 @@
 html,
 body {
   font-family: 'Inter', sans-serif;
-  background-image: url(pattern-a.png);
+  background-image: url(../public/pattern-a.png);
   position: relative;
   scroll-behavior: smooth;
 }
@@ -51,7 +51,7 @@ button {
 }
 
 .fixed-top {
-  background-image: url(pattern-a.png);
+  background-image: url(../public/pattern-a.png);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
