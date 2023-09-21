@@ -1,0 +1,98 @@
+:root {
+  --primary: #FFB74D;
+  --secondary: #A66D56;
+}
+
+::selection {
+  background-color: var(--secondary);
+  color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: url(pattern-a.png);
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: block;
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #111;
+}
+
+b {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+button {
+  outline: none;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.fixed-top {
+  background-image: url(pattern-a.png);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.back-to-top {
+  display: none;
+}
+
+.back-to-top.show.animated.infinite.pulse {
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.back-to-top:hover {
+  background-color: var(--secondary);
+}
+
+.show {
+  display: block;
+}
+
+.active {
+  color: var(--primary);
+}
+
+.error {
+  border: 1px solid red !important;
+}
+
+.overlay {
+  display: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
