@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 const Home = () => {
   return (
@@ -25,7 +27,7 @@ const Home = () => {
                 bếp và tư duy sáng tạo của một nhà thiết kế. Được định hình là
                 thương hiệu bánh ngọt chuẩn Pháp,
                 <b>
-                  <i>KarT&apos;s House</i>
+                  <i> KarT&apos;s House </i>
                 </b>
                 trao tới bạn những chiếc bánh Entremet tinh tế, cùng nhiều loại
                 bánh ngọt cao cấp và trên hết - niềm hạnh phúc khi thưởng thức
@@ -38,32 +40,32 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <div className="slide-img owl-carousel owl-theme">
-            <div
+          <MDBCarousel fade>
+            <MDBCarouselItem
               className="item"
-              style={{
-                backgroundImage: "url(./cake/store-1.jpg)",
-              }}
+              itemId={1}
+              src="./cake/store-1.jpg"
+              alt="..."
             />
-            <div
+            <MDBCarouselItem
               className="item"
-              style={{
-                backgroundImage: "url(./cake/store-2.jpg)",
-              }}
+              itemId={2}
+              src="./cake/store-2.jpg"
+              alt="..."
             />
-            <div
+            <MDBCarouselItem
               className="item"
-              style={{
-                backgroundImage: "url(./cake/store-3.jpg)",
-              }}
+              itemId={3}
+              src="./cake/store-3.jpg"
+              alt="..."
             />
-            <div
+            <MDBCarouselItem
               className="item"
-              style={{
-                backgroundImage: "url(cake/cake-5.jpg)",
-              }}
+              itemId={4}
+              src="./cake/cake-5.jpg"
+              alt="..."
             />
-          </div>
+          </MDBCarousel>
         </div>
       </section>
       <section>
@@ -75,7 +77,7 @@ const Home = () => {
         >
           <div className="products-title">
             <h2 className="name-products">Danh mục sản phẩm</h2>
-            <a href="/products">Xem thêm</a>
+            <Link to={"products"}>Xem thêm</Link>
           </div>
           <div className="slider-products owl-carousel owl-theme" />
         </div>
@@ -127,7 +129,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section style={{ paddingBottom: "1em" }}>
+      <section style={{ paddingBottom: "4em" }}>
         <div
           className="container title title-up"
           data-aos="fade-right"

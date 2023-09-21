@@ -55,11 +55,7 @@ button {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-.back-to-top {
-  display: none;
-}
-
-.back-to-top.show.animated.infinite.pulse {
+.back-to-top.animated.infinite.pulse {
   position: fixed;
   bottom: 5%;
   right: 3%;
@@ -71,6 +67,7 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 2;
+  cursor: pointer;
 }
 
 .back-to-top:hover {

@@ -10,6 +10,7 @@ import ProductDetail from "./router/ProductDetail";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { handle_mobile_nav, handleScroll } from "./assets/main";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,13 @@ function App() {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
+    window.addEventListener("scroll", handleScroll);
+    handle_mobile_nav();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
   return (
     <>
       <RouterProvider router={router} />
