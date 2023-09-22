@@ -33,9 +33,26 @@ export function handle_mobile_nav() {
   }
 }
 export function handleScroll() {
+  const header = document.querySelector("header");
+
   if (window.scrollY > 20) {
-    document.querySelector("header").classList.add("fixed-top");
+    header.classList.add("fixed-top");
   } else {
-    document.querySelector("header").classList.remove("fixed-top");
+    header.classList.remove("fixed-top");
   }
+}
+export function setSideBar() {
+  const side_bar = document.querySelector(".side_bar");
+  const width = side_bar.offsetWidth;
+
+  if (window.scrollY > 20) {
+    side_bar.classList.add("sticky");
+    side_bar.style.width = width + "px";
+  } else {
+    side_bar.classList.remove("sticky");
+  }
+}
+
+export function format_price(params) {
+  return params.toLocaleString("vi-VN") + " ₫";
 }

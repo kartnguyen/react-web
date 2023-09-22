@@ -10,7 +10,9 @@ import ProductDetail from "./router/ProductDetail";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { handle_mobile_nav, handleScroll } from "./assets/main";
+import { handle_mobile_nav, handleScroll, setSideBar } from "./assets/main";
+import { AppProvider } from "./context/AppContext";
+import Checkout from "./router/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "cart", element: <Cart /> },
+      { path: "cart/:checkoutType", element: <Checkout /> },
     ],
   },
 ]);
@@ -31,16 +34,18 @@ function App() {
     AOS.init();
     AOS.refresh();
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", setSideBar);
     handle_mobile_nav();
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", setSideBar);
     };
   }, []);
 
   return (
-    <>
+    <AppProvider>
       <RouterProvider router={router} />
-    </>
+    </AppProvider>
   );
 }
 

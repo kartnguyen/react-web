@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
-import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 const Home = () => {
   return (
