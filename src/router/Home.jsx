@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
+import { useAppContext } from "../hooks/useAppContext";
 
 const Home = () => {
+  const { products } = useAppContext();
   return (
     <div className="home_page">
       <section>
@@ -79,6 +81,17 @@ const Home = () => {
             <Link to={"products"}>Xem thêm</Link>
           </div>
           <div className="slider-products owl-carousel owl-theme" />
+          <MDBCarousel showControls showIndicators>
+            {products.map((product) => (
+              <MDBCarouselItem
+                key={product.id}
+                className="item"
+                itemId={product.id}
+                src={product.image[0]}
+                alt={product.name}
+              ></MDBCarouselItem>
+            ))}
+          </MDBCarousel>
         </div>
       </section>
       <section>

@@ -43,6 +43,7 @@ export function handleScroll() {
 }
 export function setSideBar() {
   const side_bar = document.querySelector(".side_bar");
+  if (!side_bar) return;
   const width = side_bar.offsetWidth;
 
   if (window.scrollY > 20) {
